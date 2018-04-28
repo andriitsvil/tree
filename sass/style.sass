@@ -1,0 +1,281 @@
+$bold: 700
+$medium: 500
+$regular: 400
+$light: 300
+@font-face
+  font-family: Ubuntu
+  src: url('../fonts/UbuntuBold/UbuntuBold.eot')
+  src: url('../fonts/UbuntuBold/UbuntuBold.eot?#iefix') format('embedded-opentype')
+  src: url('../fonts/UbuntuBold/UbuntuBold.ttf') format('truetype')
+  src: url('../fonts/UbuntuBold/UbuntuBold.woff')  format('woff')
+  font-weight: $bold
+  font-style: normal
+@font-face
+  font-family: Ubuntu
+  src: url('../fonts/UbuntuMedium/UbuntuMedium.eot')
+  src: url('../fonts/UbuntuMedium/UbuntuMedium.eot?#iefix') format('embedded-opentype')
+  src: url('../fonts/UbuntuMedium/UbuntuMedium.ttf') format('truetype')
+  src: url('../fonts/UbuntuMedium/UbuntuMedium.woff')  format('woff')
+  font-weight: $medium
+  font-style: normal
+@font-face
+  font-family: Ubuntu
+  src: url('../fonts/UbuntuRegular/UbuntuRegular.eot')
+  src: url('../fonts/UbuntuRegular/UbuntuRegular.eot?#iefix') format('embedded-opentype')
+  src: url('../fonts/UbuntuRegular/UbuntuRegular.ttf') format('truetype')
+  src: url('../fonts/UbuntuRegular/UbuntuRegular.woff')  format('woff')
+  font-weight: $regular
+  font-style: normal
+@font-face
+  font-family: Ubuntu
+  src: url('../fonts/UbuntuLight/UbuntuLight.eot')
+  src: url('../fonts/UbuntuLight/UbuntuLight.eot?#iefix') format('embedded-opentype')
+  src: url('../fonts/UbuntuLight/UbuntuLight.ttf') format('truetype')
+  src: url('../fonts/UbuntuLight/UbuntuLight.woff')  format('woff')
+  font-weight: $light
+  font-style: normal
+@keyframes line-1
+  0%
+    width: 0
+  100%
+    width: calc(100% - 10px)
+@keyframes line-2
+  0%
+    height: 0
+  100%
+    height: calc(100% - 10px)
+@keyframes line-3
+  0%
+    width: 0
+  100%
+    width: calc(100% - 10px)
+@keyframes line-4
+  0%
+    height: 0
+  100%
+    height: calc(100% - 10px)
+html
+    margin: 0
+    padding: 0
+body
+  font-family: Ubuntu
+  margin: 0
+  padding: 0
+  &::-webkit-scrollbar-track
+    border-radius: 0px
+  &::-webkit-scrollbar
+    width: 4px
+  &::-webkit-scrollbar-thumb
+    border-radius: 0px
+    background: rgba(50, 164, 96, 1)
+  &:hover::-webkit-scrollbar-thumb
+    background: rgba(50, 164, 96, 1)
+main
+  min-height: 100vh
+  height: auto
+  width: 100%
+  position: relative
+  background-image: url('../img/bg.jpg')
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center center
+  overflow: hidden
+  .main-overlay
+    position: absolute
+    left: 0
+    right: 0
+    bottom: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(0,0,0,0.65)
+nav
+  height: 40px
+  background-color: rgba(37, 103, 116, 0.85)
+  position: fixed
+  bottom: 0
+  left: 0
+  right: 0
+  width: 100%
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: center
+  z-index: 20
+.nav-buttons
+  max-width: 200px
+  width: 100%
+  display: flex
+  flex-direction: row
+  justify-content: space-around
+  align-items: center
+  font-size: 26px
+  a
+    text-decoration: none
+    color: rgba(138, 228, 255, 1)
+    &:hover
+      color: #fff
+  button
+    background-color: transparent
+    color: rgba(138, 228, 255, 1)
+    outline: none
+    border: none
+    font-size: 26px
+    &:hover
+      cursor: pointer
+      color: #fff
+.flex
+  width: 100%
+  min-height: calc(100vh - 40px)
+  background-color: transparent
+  z-index: 2
+  padding-bottom: 40px
+  position: relative
+  display: flex
+  flex-direction: row
+  justify-content: space-around
+  align-items: center
+  flex-wrap: wrap
+.flex-item
+  width: calc(30% - 50px)
+  height: calc((100vh - 160px) / 2)
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  background-color: rgba(0,0,0,0.65)
+  padding: 25px
+  position: relative
+  transition: all 0.2s ease-in
+  margin: 5px
+  border-radius: 5px
+  p
+    color: #fff
+    font-size: 26px
+    text-align: center
+    font-weight: $light
+  span
+    background-color: rgba(71, 212, 255, 1)
+    position: absolute
+    animation-timing-function: ease-in
+    animation-fill-mode: forwards
+  .line-1
+    left: 5px
+    width: 0
+    height: 2px
+    top: 5px
+    animation-duration: 0.1s
+    animation-delay: 0
+  .line-2
+    right: 5px
+    width: 2px
+    top: 5px
+    height: 0
+    animation-duration: 0.1s
+    animation-delay: 0.1s
+  .line-3
+    right: 5px
+    width: 0
+    height: 2px
+    bottom: 5px
+    animation-duration: 0.1s
+    animation-delay: 0.2s
+  .line-4
+    left: 5px
+    width: 2px
+    bottom: 5px
+    height: 0
+    animation-duration: 0.1s
+    animation-delay: 0.3s
+  &:hover
+    cursor: pointer
+    background-color: rgba(0,0,0,0.85)
+    .line-1
+      animation-name: line-1
+    .line-2
+      animation-name: line-2
+    .line-3
+      animation-name: line-3
+    .line-4
+      animation-name: line-4
+.disable
+  display: none
+.attention
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)
+  min-height: 320px
+  background-color: rgba(6, 132, 79, 0.43)
+  &:hover
+    background-color: rgba(6, 132, 79, 0.63)
+  strong
+    color: rgba(199, 255, 239, 1)
+    text-transform: uppercase
+    font-weight: $medium
+    font-size: 27px
+#modal
+  position: absolute
+  left: 0
+  right: 0
+  width: 100%
+  height: 100%
+  background-color: rgba(0, 51, 37, 0.95)
+  z-index: 15
+  text-align: center
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  align-items: center
+  color: rgba(224, 255, 247, 1)
+  .text
+    max-width: 80%
+    margin-left: 10%
+    margin-right: 10%
+    margin-top: 10%
+    margin-bottom: 10%
+    h1
+      font-weight: $medium
+      text-transform: uppercase
+      b
+        font-weight: $bold
+    strong
+      text-align: right
+      font-weight: $regular
+    b
+      font-weight: $medium
+      display: block
+      margin-top: 15px
+    p
+      font-weight: $regular
+      b
+        font-weight: $medium
+        display: inline
+        margin-top: 0
+    small
+      font-weight: $light
+#modalClose
+  position: absolute
+  right: 20px
+  top: 20px
+  color: rgba(199, 255, 239, 1)
+  i
+    font-size: 36px
+  &:hover
+    cursor: pointer
+@media only screen and (max-width: 992px)
+  .flex-item
+    width: calc(45% - 50px)
+@media only screen and (max-width: 680px)    
+  .attention
+    height: auto
+    min-height: 320px
+    width: 80%
+    margin-left: auto
+    margin-right: auto
+    p
+      margin-top: 5px
+      margin-bottom: 5px
+@media only screen and (max-width: 570px)
+  .flex-item
+    width: 90%
+    margin-left: 5%
+    margin-right: 5%
+  
