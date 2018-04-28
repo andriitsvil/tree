@@ -413,33 +413,36 @@ nav {
   font-size: 27px;
 }
 
+.attention p {
+  margin-top: 0;
+}
+
 #modal {
-  position: absolute;
+  position: fixed;
+  top: 0;
   left: 0;
+  bottom: 40px;
   right: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 51, 37, 0.95);
   z-index: 15;
   text-align: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   color: #e0fff7;
+  display: none;
 }
 
 #modal .text {
@@ -484,6 +487,13 @@ nav {
   font-weight: 300;
 }
 
+.modal-active {
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
 #modalClose {
   position: absolute;
   right: 20px;
@@ -525,5 +535,11 @@ nav {
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;
+  }
+  #modal .text h1 {
+    font-size: 18px;
+  }
+  #modal .text h1 b {
+    font-size: 18px;
   }
 }
